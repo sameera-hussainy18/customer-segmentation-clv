@@ -10,6 +10,8 @@ IEEE Access 13 (2025), DOI 10.1109/ACCESS.2025.3550339, on the UCI Online Retail
 
 127018042 · Pattan Sameera Hussainy · Guide: Dr. Vidivelli S · SASTRA Deemed University
 
+**Live app: <https://sameera-customer-segmentation-clv.streamlit.app>** (Streamlit Community Cloud; after a period without visitors the app sleeps, so the first visit may take a minute.)
+
 ## Run it
 
 **Windows:** double-click **`run_app.bat`**. The app opens in your browser at <http://localhost:8501>.
