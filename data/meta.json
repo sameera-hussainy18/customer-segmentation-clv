@@ -1,0 +1,518 @@
+{
+ "random_state": 42,
+ "features": [
+  "Recency",
+  "Frequency",
+  "Monetary"
+ ],
+ "dataset": {
+  "raw_rows": 541909,
+  "raw_customers": 4372,
+  "countries": 38,
+  "clean_rows": 392692,
+  "clean_customers": 4338,
+  "total_revenue": 8887208.894000001,
+  "first_date": "2010-12-01T08:26:00",
+  "last_date": "2011-12-09T12:50:00",
+  "snapshot_date": "2011-12-10T12:50:00",
+  "rfm_customers_before_iqr": 4338,
+  "rfm_customers_after_iqr": 3710
+ },
+ "iqr_bounds": {
+  "Recency": {
+   "Lower Bound": -168.0,
+   "Upper Bound": 328.0
+  },
+  "Frequency": {
+   "Lower Bound": -5.0,
+   "Upper Bound": 11.0
+  },
+  "Monetary": {
+   "Lower Bound": -1724.6899999999996,
+   "Upper Bound": 3691.7699999999995
+  }
+ },
+ "scaler": {
+  "scale": [
+   0.003067484662576687,
+   0.1,
+   0.0002717310080405205
+  ],
+  "min": [
+   -0.003067484662576687,
+   -0.1,
+   -0.0010189912801519519
+  ],
+  "data_min": [
+   1.0,
+   1.0,
+   3.75
+  ],
+  "data_max": [
+   327.0,
+   11.0,
+   3683.86
+  ]
+ },
+ "primary_model": "K-Means++",
+ "models": {
+  "K-Means": {
+   "type": "centroid",
+   "column": "KMeans_Cluster",
+   "centers_scaled": [
+    [
+     0.10410969029492204,
+     0.5032530120481928,
+     0.5643847147313857
+    ],
+    [
+     0.148362810147233,
+     0.10932246561385632,
+     0.15895573264200902
+    ],
+    [
+     0.6955362578694196,
+     0.05267175572519081,
+     0.11573685328564585
+    ]
+   ],
+   "n_clusters": 3,
+   "silhouette": 0.4787342332703695,
+   "davies_bouldin": 0.7591077243205618,
+   "setting": "K = 3, init='random', n_init=10"
+  },
+  "K-Means++": {
+   "type": "centroid",
+   "column": "KMeansPlusPlus_Cluster",
+   "centers_scaled": [
+    [
+     0.10410969029492204,
+     0.5032530120481928,
+     0.5643847147313857
+    ],
+    [
+     0.148362810147233,
+     0.10932246561385633,
+     0.15895573264200902
+    ],
+    [
+     0.6955362578694195,
+     0.05267175572519081,
+     0.11573685328564587
+    ]
+   ],
+   "n_clusters": 3,
+   "silhouette": 0.4787342332703695,
+   "davies_bouldin": 0.7591077243205618,
+   "setting": "K = 3, init='k-means++', n_init=10"
+  },
+  "K-Medoids": {
+   "type": "centroid",
+   "column": "KMedoids_Cluster",
+   "centers_scaled": [
+    [
+     0.09202453987730062,
+     0.5000000000000001,
+     0.5572143223979718
+    ],
+    [
+     0.1380368098159509,
+     0.1,
+     0.14934607932915048
+    ],
+    [
+     0.6932515337423313,
+     0.0,
+     0.09636396738140977
+    ]
+   ],
+   "medoid_customer_ids": [
+    14188,
+    15068,
+    16823
+   ],
+   "n_clusters": 3,
+   "silhouette": 0.4775401372026614,
+   "davies_bouldin": 0.7620964591301934,
+   "setting": "K = 3, PAM (BUILD + SWAP), backend: built-in PAM (SimpleKMedoids)"
+  },
+  "GMM": {
+   "type": "gmm",
+   "column": "GMM_Cluster",
+   "weights": [
+    0.26875182152470806,
+    0.21699189159667842,
+    0.2958158436461712,
+    0.21844044323244233
+   ],
+   "means_scaled": [
+    [
+     0.06729188670752749,
+     0.4259119763501343,
+     0.46757289575744665
+    ],
+    [
+     0.3710916947475804,
+     0.21091157771328575,
+     0.29527379193090664
+    ],
+    [
+     0.12073104102119735,
+     0.06590087403549455,
+     0.11314658373317034
+    ],
+    [
+     0.6380888611039378,
+     0.01705220152919843,
+     0.07220335523252057
+    ]
+   ],
+   "precisions_cholesky": [
+    [
+     [
+      18.08520494332506,
+      1.8257757855956702,
+      -3.2827311939219883
+     ],
+     [
+      0.0,
+      4.2634458455171504,
+      -2.3374572060494185
+     ],
+     [
+      0.0,
+      0.0,
+      4.952348092997828
+     ]
+    ],
+    [
+     [
+      4.418955529142352,
+      1.1277440973256412,
+      0.2751464780840457
+     ],
+     [
+      0.0,
+      6.775678857995823,
+      -1.9966742618274698
+     ],
+     [
+      0.0,
+      0.0,
+      5.851253407813459
+     ]
+    ],
+    [
+     [
+      12.671169758827695,
+      2.044138779662688,
+      -2.406504706059223
+     ],
+     [
+      0.0,
+      13.90491981277509,
+      -9.410723515598018
+     ],
+     [
+      0.0,
+      0.0,
+      18.821715375757385
+     ]
+    ],
+    [
+     [
+      4.406294120801669,
+      0.16693555996853135,
+      -0.17825797940765403
+     ],
+     [
+      0.0,
+      26.593758765270554,
+      -8.824642171080585
+     ],
+     [
+      0.0,
+      0.0,
+      25.111125987410016
+     ]
+    ]
+   ],
+   "n_clusters": 4,
+   "silhouette": 0.32935251534745114,
+   "davies_bouldin": 1.1935919506325707,
+   "setting": "K = 4, covariance='full'"
+  },
+  "Mean Shift": {
+   "type": "centroid",
+   "column": "MeanShift_Cluster",
+   "centers_scaled": [
+    [
+     0.1525192068851455,
+     0.10595116988809711,
+     0.15233781188144133
+    ],
+    [
+     0.5831266138395254,
+     0.051602895553257734,
+     0.10528871803174959
+    ]
+   ],
+   "bandwidth": 0.3257588258635668,
+   "quantile": 0.25,
+   "n_clusters": 2,
+   "silhouette": 0.4245620285027224,
+   "davies_bouldin": 0.8706292043048821,
+   "setting": "bandwidth = 0.3258 (quantile 0.25), bin_seeding=True"
+  }
+ },
+ "clv": {
+  "cutoff": "2011-09-01T00:00:00",
+  "observation_days": 274,
+  "prediction_days": 100,
+  "data_start": "2010-12-01T08:26:00",
+  "data_end": "2011-12-09T12:50:00",
+  "k": 3,
+  "feature_columns": [
+   "Recency",
+   "Frequency",
+   "Monetary",
+   "Cluster_0",
+   "Cluster_1",
+   "Cluster_2"
+  ],
+  "scaler": {
+   "scale": [
+    0.003663003663003663,
+    0.14285714285714285,
+    0.00033372156275133407
+   ],
+   "min": [
+    0.0,
+    -0.14285714285714285,
+    -0.0009677925319788688
+   ],
+   "data_min": [
+    0.0,
+    1.0,
+    2.9
+   ],
+   "data_max": [
+    273.0,
+    8.0,
+    2999.41
+   ]
+  },
+  "segment_centers_scaled": [
+   [
+    0.15334973035178373,
+    0.5623349955998828,
+    0.5706232912145428
+   ],
+   [
+    0.22142292362556662,
+    0.12561359345500323,
+    0.1749232799854668
+   ],
+   [
+    0.713220830313697,
+    0.03883868486829478,
+    0.12214928741710299
+   ]
+  ],
+  "iqr_bounds": {
+   "Recency": {
+    "Lower Bound": -151.5,
+    "Upper Bound": 324.5
+   },
+   "Frequency": {
+    "Lower Bound": -3.5,
+    "Upper Bound": 8.5
+   },
+   "Monetary": {
+    "Lower Bound": -1387.04,
+    "Upper Bound": 3000.3999999999996
+   }
+  },
+  "untuned_params": {
+   "Random Forest": {
+    "n_estimators": 100
+   },
+   "Gradient Boosting": {}
+  },
+  "tuned_params": {
+   "Random Forest": {
+    "max_depth": 16,
+    "max_features": "log2",
+    "min_samples_leaf": 19,
+    "min_samples_split": 13,
+    "n_estimators": 154
+   },
+   "Gradient Boosting": {
+    "learning_rate": 0.19262268462637636,
+    "max_depth": 2,
+    "min_samples_leaf": 16,
+    "min_samples_split": 14,
+    "n_estimators": 387,
+    "subsample": 0.815876852955632
+   }
+  },
+  "best_cv_r2": {
+   "Random Forest": 0.09831618621356916,
+   "Gradient Boosting": 0.11340852917972806
+  },
+  "search": {
+   "iterations": 20,
+   "cv_folds": 5,
+   "test_size": 0.2
+  }
+ },
+ "paper": {
+  "clustering": [
+   {
+    "Model": "K-Means",
+    "Paper K": 4,
+    "Paper Silhouette": 0.5012,
+    "Paper Davies-Bouldin": 0.7481,
+    "Paper Source": "Table 25 (Method 1, K-Means)"
+   },
+   {
+    "Model": "K-Means++",
+    "Paper K": 4,
+    "Paper Silhouette": 0.5012,
+    "Paper Davies-Bouldin": 0.7481,
+    "Paper Source": "Tables 4, 24, 25"
+   },
+   {
+    "Model": "K-Medoids",
+    "Paper K": 7,
+    "Paper Silhouette": 0.3894,
+    "Paper Davies-Bouldin": 0.9561,
+    "Paper Source": "Tables 5, 24, 27"
+   },
+   {
+    "Model": "GMM",
+    "Paper K": 8,
+    "Paper Silhouette": 0.0452,
+    "Paper Davies-Bouldin": 2.6394,
+    "Paper Source": "Tables 6, 24"
+   },
+   {
+    "Model": "Mean Shift",
+    "Paper K": 5,
+    "Paper Silhouette": 0.4027,
+    "Paper Davies-Bouldin": 1.3553,
+    "Paper Source": "Tables 7, 24"
+   }
+  ],
+  "k_tables": {
+   "K-Means": {
+    "4": [
+     0.5012,
+     0.7481
+    ]
+   },
+   "K-Means++": {
+    "4": [
+     0.5012,
+     0.7481
+    ],
+    "5": [
+     0.4476,
+     0.7734
+    ],
+    "6": [
+     0.4382,
+     0.8697
+    ],
+    "7": [
+     0.4412,
+     0.8291
+    ],
+    "8": [
+     0.4013,
+     0.8861
+    ],
+    "9": [
+     0.3989,
+     0.8846
+    ],
+    "10": [
+     0.401,
+     0.8961
+    ]
+   },
+   "K-Medoids": {
+    "6": [
+     0.3608,
+     0.9689
+    ],
+    "7": [
+     0.3894,
+     0.9561
+    ],
+    "8": [
+     0.3421,
+     0.9088
+    ],
+    "9": [
+     0.3261,
+     0.9767
+    ],
+    "10": [
+     0.3272,
+     1.0143
+    ]
+   },
+   "GMM": {
+    "8": [
+     0.0452,
+     2.6394
+    ],
+    "9": [
+     0.0084,
+     3.106
+    ],
+    "10": [
+     -0.0028,
+     2.7699
+    ]
+   }
+  },
+  "clv": [
+   {
+    "Model": "Random Forest",
+    "Tuned/Untuned": "Untuned",
+    "Paper MAE": 2.3903,
+    "Paper MSE": 243.4673,
+    "Paper R\u00b2": 0.9999
+   },
+   {
+    "Model": "Random Forest",
+    "Tuned/Untuned": "Tuned",
+    "Paper MAE": 2.4558,
+    "Paper MSE": 348.9028,
+    "Paper R\u00b2": 0.9999
+   },
+   {
+    "Model": "Gradient Boosting",
+    "Tuned/Untuned": "Untuned",
+    "Paper MAE": 15.5569,
+    "Paper MSE": 831.1362,
+    "Paper R\u00b2": 0.9998
+   },
+   {
+    "Model": "Gradient Boosting",
+    "Tuned/Untuned": "Tuned",
+    "Paper MAE": 2.4212,
+    "Paper MSE": 11.9509,
+    "Paper R\u00b2": 0.9999
+   }
+  ],
+  "dataset": {
+   "dataset_rows": 1067372,
+   "missing_description": 4382,
+   "missing_customer_id": 243007,
+   "customers_after_preprocessing": 5777
+  }
+ }
+}

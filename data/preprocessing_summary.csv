@@ -1,0 +1,8 @@
+Step,Rows Remaining,Rows Removed,Customers,Invoices
+0. Raw data,541909,0,4372,25900
+1. Remove missing CustomerID,406829,135080,4372,22190
+2. Convert InvoiceDate to datetime,406829,0,4372,22190
+3. Remove cancelled invoices ('C...'),397924,8905,4339,18536
+4. Keep Quantity > 0,397924,0,4339,18536
+5. Keep UnitPrice > 0,397884,40,4338,18532
+6. Remove exact duplicate rows,392692,5192,4338,18532

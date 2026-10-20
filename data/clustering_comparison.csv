@@ -1,0 +1,6 @@
+Model,Number of Clusters,Silhouette Score,Davies-Bouldin Index,Number of Customers,Smallest Cluster,Largest Cluster (%),Setting
+K-Means,3,0.4787342332703695,0.7591077243205618,3710,828,52.93800539083558,"K = 3, init='random', n_init=10"
+K-Means++,3,0.4787342332703695,0.7591077243205618,3710,828,52.93800539083558,"K = 3, init='k-means++', n_init=10"
+K-Medoids,3,0.4775401372026614,0.7620964591301934,3710,849,52.37196765498652,"K = 3, PAM (BUILD + SWAP), backend: built-in PAM (SimpleKMedoids)"
+GMM,4,0.32935251534745114,1.1935919506325707,3710,650,32.83018867924528,"K = 4, covariance='full'"
+Mean Shift,2,0.4245620285027224,0.8706292043048821,3710,1021,72.47978436657682,"bandwidth = 0.3258 (quantile 0.25), bin_seeding=True"

@@ -1,0 +1,8 @@
+# Libraries for the web app. pandas, numpy and scikit-learn are the exact versions the project notebook ran
+# with, so the app reproduces the notebook's numbers exactly. The app needs Python 3.11 or newer (tested on 3.13).
+streamlit==1.66.0
+plotly==7.1.0
+pandas==3.0.6
+numpy==2.5.3
+scikit-learn==1.9.1
+scipy==1.18.1
